@@ -5,7 +5,7 @@ import { Platform, Dimensions, View, Text } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
 //screens
-import HomeScreen from '../screens/HomeScreen';
+import WeaponsScreen from '../screens/WeaponsScreen';
 import AgentsScreen from '../screens/AgentsScreen';
 import MapsScreen from '../screens/MapsScreen';
 
@@ -23,7 +23,7 @@ const Navigation = () => {
                 tabBarInactiveTintColor: '#042e27',
             }}>
                 <Tab.Screen name="Agents" component={AgentsScreen} />
-                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Weapons" component={WeaponsScreen} />
                 <Tab.Screen name="Maps" component={MapsScreen} />
             </Tab.Navigator>
         </NavigationContainer>

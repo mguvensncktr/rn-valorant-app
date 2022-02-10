@@ -19,9 +19,10 @@ const Header = () => {
                 <Text
                     style={{
                         color: '#fff',
-                        fontSize: 20,
+                        fontSize: 22,
                         fontWeight: 'bold',
-                    }}>VALORANT WIKI
+                    }}>
+                    VALOPEDIA
                 </Text>
             </View>
         </SafeAreaView>

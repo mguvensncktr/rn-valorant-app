@@ -1,12 +1,23 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, ScrollView } from 'react-native'
+import React, { useContext, useEffect } from 'react'
+import AppContext from '../context/AppContext';
+import AgentItem from '../components/AgentItem';
 
 const AgentsScreen = () => {
+
+    const { fetchAgents, agents } = useContext(AppContext);
+
+    useEffect(() => {
+        fetchAgents();
+    }, [])
+
     return (
-        <View>
-            <Text>AgentsScreen</Text>
-        </View>
+        <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+            {agents.map((agent, index) => (
+                <AgentItem agent={agent} key={index} />
+            ))}
+        </ScrollView>
     )
 }
 
-export default AgentsScreen
+export default AgentsScreen;
