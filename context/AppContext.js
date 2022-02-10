@@ -23,7 +23,6 @@ export const AppContextProvider = ({ children }) => {
     const fetchMaps = async () => {
         const res = await axios.get(`${API_URL}/maps`);
         setMaps(res.data.data);
-        console.log(res.data.data);
     }
 
     return (
