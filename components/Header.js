@@ -4,13 +4,10 @@ import React from 'react'
 const Header = () => {
     return (
         <SafeAreaView style={{
-            marginTop: 50,
             backgroundColor: '#fa4454',
             flex: 0.1,
             height: '100%',
             justifyContent: 'center',
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20
         }}>
             <View style={{
                 justifyContent: 'center',
