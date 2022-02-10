@@ -7,14 +7,20 @@ const API_URL = "https://valorant-api.com/v1";
 export const AppContextProvider = ({ children }) => {
 
     const [agents, setAgents] = useState([]);
+    const [weapons, setWeapons] = useState([]);
 
     const fetchAgents = async () => {
         const res = await axios.get(`${API_URL}/agents?isPlayableCharacter=true`);
         setAgents(res.data.data);
     };
 
+    const fetchWeapons = async () => {
+        const res = await axios.get(`${API_URL}/weapons`);
+        setWeapons(res.data.data);
+    }
+
     return (
-        <AppContext.Provider value={{ fetchAgents, agents }}>
+        <AppContext.Provider value={{ fetchAgents, agents, weapons, fetchWeapons }}>
             {children}
         </AppContext.Provider>
     )

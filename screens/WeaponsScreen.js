@@ -1,11 +1,22 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { Text, ScrollView } from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import AppContext from '../context/AppContext';
+import WeaponItem from '../components/WeaponItem';
 
 const WeaponsScreen = () => {
+
+    const { weapons, fetchWeapons } = useContext(AppContext);
+
+    useEffect(() => {
+        fetchWeapons();
+    }, []);
+
     return (
-        <View>
-            <Text>WeaponsScreen</Text>
-        </View>
+        <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+            {weapons.map((weapon, index) => (
+                <WeaponItem weapon={weapon} key={index} />
+            ))}
+        </ScrollView>
     )
 }
 
