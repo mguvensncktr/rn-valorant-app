@@ -19,6 +19,7 @@ const WeaponItem = ({ weapon, index }) => {
                     </View>
                 ))}
             </View>
+            <View style={{ height: 1, backgroundColor: 'gray', marginHorizontal: 25 }} />
         </View>
     )
 }
